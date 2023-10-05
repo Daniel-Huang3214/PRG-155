@@ -9,7 +9,8 @@
 */
 
 int main() {
-    double area, radius, pi = 3.14159;
+    double area, radius;
+    const double pi = 3.14159;
 
     printf("Circle Area? ");
     scanf("%lf", &area);

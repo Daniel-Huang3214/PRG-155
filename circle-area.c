@@ -8,7 +8,8 @@
 */
 
 int main() {
-    double radius, pi = 3.14159;
+    double radius;
+    const double pi = 3.14159;
 
     printf("Radius? ");
     scanf("%lf", &radius);
