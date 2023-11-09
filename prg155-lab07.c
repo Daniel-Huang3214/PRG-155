@@ -4,7 +4,7 @@
 /*
     Program     prg155-lab07.c
     Student     Daniel Huang
-    Date:       November 8 2023
+    Date:       November 9 2023
 */
 
 void showMenu() {
@@ -22,6 +22,9 @@ int processChoice () {
     scanf("%d", &input);
     
     switch (input) {
+        case 0:
+            printf("\nExiting program...");
+            break;
         case 1:
             printf("\nDrawing rectangle...");
             break;
@@ -40,12 +43,10 @@ int processChoice () {
 }
 
 int main() {
-    int choice;
 
     do {
         showMenu();
-        choice = processChoice();
-    } while(choice != 0);
+    } while(processChoice() != 0);
 
     return 0;
 }
