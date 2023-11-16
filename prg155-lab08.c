@@ -4,8 +4,13 @@
 /*
     Program     prg155-lab08.c
     Student     Daniel Huang
-    Date:       November 15 2023
+    Date:       November 16 2023
 */
+
+void printRow(int width);
+void drawRectangle(int width, int height);
+void drawRightTriangle(int height);
+void drawIsoscelesTriangle(int height);
 
 void showMenu() {
     printf("\nMenu:\n");
@@ -15,31 +20,6 @@ void showMenu() {
     printf(" 0. Exit Program\n");
 }
 
-void printRow (int width) {
-    for (int i = 0; i < width; i++){
-        printf("*");
-    }
-    printf("\n");
-}
-
-void drawRectangle (int width, int height) {
-    for (int i = 0; i < height ; i++){
-        printRow(width);
-    }
-}
-
-void drawRightTriangle (int height) {
-    for (int i = 0; i < height; i++) {
-        printRow(i * 2 + 1);
-    }
-}
-
-void drawIsoscelesTriangle (int height) {
-    for (int i = 0; i < height; i++) {
-        printf("%*s", height - i - 1, "");
-        printRow(i * 2 + 1);
-    }
-}
 
 int processChoice () {
     int input, width, height;
@@ -66,7 +46,7 @@ int processChoice () {
             drawRightTriangle(height);
             break;
         case 3:
-            printf("\nEnter Height of the Isoceles Triangle: ");
+            printf("\nEnter Height of the Isosceles Triangle: ");
             scanf("%d", &height);
             printf("\n");
             
@@ -80,10 +60,35 @@ int processChoice () {
 }
 
 int main() {
-
     do {
         showMenu();
     } while(processChoice() != 0);
 
     return 0;
+}
+
+void printRow (int width) {
+    for (int i = 0; i < width; i++){
+        printf("*");
+    }
+    printf("\n");
+}
+
+void drawRectangle (int width, int height) {
+    for (int i = 0; i < height ; i++){
+        printRow(width);
+    }
+}
+
+void drawRightTriangle (int height) {
+    for (int i = 0; i < height; i++) {
+        printRow(i * 2 + 1);
+    }
+}
+
+void drawIsoscelesTriangle (int height) {
+    for (int i = 0; i < height; i++) {
+        printf("%*s", height - i - 1, "");
+        printRow(i * 2 + 1);
+    }
 }
